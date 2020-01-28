@@ -1,5 +1,4 @@
 # Table of contents
 
-* [pwd-generate](README.md)
-* [Password Generator](password-generator.md)
+* [Windows Red Team](README.md)
 
