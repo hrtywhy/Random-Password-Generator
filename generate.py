@@ -24,7 +24,7 @@ class PWGenGui(tkinter.Frame):
         self.consonantsEntry.pack(ipadx="50px", pady="5px")
 
         self.vowelsLabel = tkinter.Label(self)
-        self.vowelsLabel["text"] = "Huruf Vokal :"
+        self.vowelsLabel["text"] = "Vowel :"
         self.vowelsLabel.pack(padx="5px")
         self.vowelsEntry = tkinter.Entry(self)
         self.vowelsName = tkinter.StringVar()
@@ -51,7 +51,7 @@ class PWGenGui(tkinter.Frame):
         self.symbolsEntry.pack(ipadx="50px", pady="5px")
 
         self.emailLabel = tkinter.Label(self)
-        self.emailLabel["text"] = "Masukkan Email Tujuan :"
+        self.emailLabel["text"] = "Email Destination :"
         self.emailLabel.pack(padx="5px")
         self.emailEntry = tkinter.Entry(self)
         self.emailName = tkinter.StringVar()
@@ -60,7 +60,7 @@ class PWGenGui(tkinter.Frame):
         self.emailEntry.pack(ipadx="50px", pady="5px")
 
         self.label = tkinter.Label(self)
-        self.label["text"] = "Banyak Sandi Yang Dihasilakn"
+        self.label["text"] = "Password Are Generate"
         self.label.pack(padx="5px")
         self.spinEntry = tkinter.Spinbox(self)
         self.spin = tkinter.IntVar()
@@ -70,7 +70,7 @@ class PWGenGui(tkinter.Frame):
         self.spinEntry.pack(after=self.label, padx="5px")
 
         self.labelLength = tkinter.Label(self)
-        self.labelLength["text"] = "Banyak Karakter"
+        self.labelLength["text"] = "Character Are Generate"
         self.labelLength.pack(padx="5px", after=self.spinEntry)
         self.spinEntryLength = tkinter.Spinbox(self)
         self.spinLength = tkinter.IntVar()
@@ -81,14 +81,14 @@ class PWGenGui(tkinter.Frame):
 
         self.easyCheck = tkinter.Checkbutton(self)
         self.easyCheck.pack(after=self.spinEntryLength)
-        self.easyCheck["text"] = "Kata Sandi Sederhana"
+        self.easyCheck["text"] = "Simple Password"
         self.easy = tkinter.BooleanVar()
         self.easy.set(True)
         self.easyCheck["variable"] = self.easy
 
         self.amountCheck = tkinter.Checkbutton(self)
         self.amountCheck.pack(after=self.spinEntryLength)
-        self.amountCheck["text"] = "Terdapat Angka"
+        self.amountCheck["text"] = "Any Number"
         self.amount = tkinter.BooleanVar()
         self.amountCheck["variable"] = self.amount
 
@@ -111,9 +111,9 @@ class PWGenGui(tkinter.Frame):
     def generate(self):
         import smtplib
 
-        sender = 'presidentpalsu@gmail.com'
+        sender = 'your email@gmail.com'
         receiver =self.emailEntry
-        password = 'k0nt0lmu69'
+        password = 'your password'
 
         smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
         smtpserver.ehlo()
@@ -121,7 +121,7 @@ class PWGenGui(tkinter.Frame):
         smtpserver.ehlo
         smtpserver.login(sender, password)
 
-        msg = 'Subject:SOBAT QONTOL\n https://gist.github.com/Der-Eddy/e75674280c0beda502a6'
+        msg = 'input your messages here'
 
         smtpserver.sendmail(sender, receiver, msg)
         print('Sent')
@@ -135,7 +135,7 @@ class PWGenGui(tkinter.Frame):
 
         self.textOutput.delete(1.0, "end")
         if self.spin.get() == 0 or self.spinLength.get() == 0:
-            self.textOutput.insert("end", "Tidak Ada Sandi yang Dimasukkan!!!", "warning")
+            self.textOutput.insert("end", "Theres Nothing Password You Input", "warning")
             return 0
 
         for i in range(0, self.spin.get()):
@@ -169,6 +169,6 @@ class PWGenGui(tkinter.Frame):
 if __name__ == "__main__":
     root = tkinter.Tk()
     root.geometry("300x700")
-    root.wm_title("Password Generator")
+    root.wm_title("ApolloGen")
     app = PWGenGui(root)
     app.mainloop()
