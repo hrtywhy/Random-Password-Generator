@@ -3,4 +3,4 @@
 Password Generator
 ---
 
-This code made with Tkinter GUI for generate random password
+This code made with Python Tkinter GUI for generate yout random password
