@@ -24,7 +24,7 @@ class PWGenGui(tkinter.Frame):
         self.consonantsEntry.pack(ipadx="50px", pady="5px")
 
         self.vowelsLabel = tkinter.Label(self)
-        self.vowelsLabel["text"] = "Vowel :"
+        self.vowelsLabel["text"] = "Consonant :"
         self.vowelsLabel.pack(padx="5px")
         self.vowelsEntry = tkinter.Entry(self)
         self.vowelsName = tkinter.StringVar()
@@ -111,9 +111,9 @@ class PWGenGui(tkinter.Frame):
     def generate(self):
         import smtplib
 
-        sender = 'your email@gmail.com'
+        sender = 'your email@gmail.com' #your email
         receiver =self.emailEntry
-        password = 'your password'
+        password = 'your password' #your password
 
         smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
         smtpserver.ehlo()
@@ -121,7 +121,7 @@ class PWGenGui(tkinter.Frame):
         smtpserver.ehlo
         smtpserver.login(sender, password)
 
-        msg = 'input your messages here'
+        msg = 'input your messages here' #input message
 
         smtpserver.sendmail(sender, receiver, msg)
         print('Sent')
@@ -169,6 +169,6 @@ class PWGenGui(tkinter.Frame):
 if __name__ == "__main__":
     root = tkinter.Tk()
     root.geometry("300x700")
-    root.wm_title("ApolloGen")
+    root.wm_title("Random Password Generator")
     app = PWGenGui(root)
     app.mainloop()
