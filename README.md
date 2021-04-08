@@ -19,8 +19,6 @@ A customizable wordlist, messages, and password generator.
 - input special char
 - input email destination
 <br>
-<br>
-<br>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/44236850/113971606-4878e980-9863-11eb-96bc-35d6c727bb61.PNG"/>
 </p>
